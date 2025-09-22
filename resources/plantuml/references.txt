@@ -1,0 +1,9 @@
+/' REFERENCES '/
+
+    !function $Reference($content, $link)
+        !return "<sup>[[[" + $link + "{" + $link + "}" + " " + $content + "]]]</sup>"
+    !endfunction
+
+    !$Reference1 = $Reference("1", "https://www.google.com")
+    !$Reference2 = $Reference("2", "https://www.google.com")
+    !$Reference3 = $Reference("3", "https://www.google.com")

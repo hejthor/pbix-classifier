@@ -1,0 +1,53 @@
+@startuml
+
+/' INCLUDE '/
+
+    !include ../resources/plantuml/references.txt
+    !include ../resources/plantuml/theme.txt
+    !include ../resources/plantuml/styles.txt
+
+/' STYLE '/
+
+    hide unlinked
+    hide footbox
+
+/' TITLE '/
+
+    title Auto Classification Process
+
+/' PARTICIPANTS '/
+
+    actor       "User"          as USER     <<User>>
+    database    "App"           as PYTHON   <<Python>>
+    entity      "Qwen2.5:1.5b"  as OLLAMA   <<Ollama>>
+    database    "DAX"           as DAX      <<DAX>>
+    database    "Report"        as PBIX     <<Power BI>>
+
+/' STEPS '/
+
+    group Initiate
+        USER -> PYTHON : Run run.bat
+    end
+
+    group Connect
+        PYTHON -> DAX : Establish connection
+    end
+
+    group Retrieve data
+        PYTHON -> PBIX : Request classification table
+        PBIX --> PYTHON : Return classification table
+        PYTHON -> PBIX : Retrieve data table
+        PBIX --> PYTHON : Return data table
+    end
+
+    group Classify data
+        PYTHON -> PYTHON : Loop over data
+        PYTHON -> OLLAMA : Send classifications + value
+        OLLAMA --> PYTHON : Return classification
+    end
+
+    group Refresh
+        USER -> PBIX : Refresh report
+    end
+
+@enduml

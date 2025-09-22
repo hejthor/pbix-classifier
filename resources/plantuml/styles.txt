@@ -1,0 +1,126 @@
+/' VARIABLES '/
+
+    !$PaddingHorizontal = 180
+    !$PaddingVertical = 30
+
+    !$FontSize = 14
+
+/' FOOTER '/
+
+    right footer Created on %date("MM-dd-yyyy' at 'HH:mm")
+
+/' GENERAL STYLE '/
+
+    !theme plain
+
+    skinparam actorStyle awesome
+
+    skinparam Diagram {
+        BorderThickness 1
+        BorderColor $ColorThemeSecondary
+    }
+
+    <style>
+        root {
+            Margin 0 $PaddingHorizontal 0 $PaddingHorizontal
+            FontName Helvetica
+            FontSize $FontSize
+            backgroundColor $ColorBackgroundPrimary
+        }
+        title {
+            FontSize 20
+            Margin %string($PaddingVertical / 2) 0 $PaddingVertical 0
+            Padding 5 10
+            backgroundColor $ColorThemePrimary
+            FontColor $ColorBackgroundTertiary
+        }
+        footer {
+            Margin $PaddingVertical 0 %string($PaddingVertical / 2) 0
+            FontColor $ColorForegroundSecondary
+        }
+    </style>
+
+    skinparam PackageBackgroundColor $ColorBackgroundTertiary
+    skinparam PackageBorderColor $ColorBackgroundSecondary
+    skinparam PackageFontColor $ColorForegroundPrimary
+    skinparam PackageFontSize $FontSize
+
+    skinparam FrameBackgroundColor $ColorBackgroundTertiary
+    skinparam FrameBorderColor $ColorBackgroundSecondary
+    skinparam FrameFontColor $ColorForegroundSecondary
+    skinparam FrameFontSize $FontSize
+    skinparam FrameFontStyle normal
+
+/' SEQUENCE STYLE '/
+
+    <style>
+        sequenceDiagram {
+            Lifeline {
+                linestyle solid
+                lineThickness 1
+            }
+            FontColor $ColorForegroundPrimary
+            linecolor $ColorBackgroundSecondary
+            group {
+                linecolor $ColorBackgroundSecondary
+            }
+        }
+    </style>
+
+    skinparam SequenceLifeLineBackgroundColor $ColorThemeSecondary
+    skinparam SequenceLifeLineBorderColor $ColorBackgroundSecondary
+
+    skinparam SequenceActorBorderColor $ColorThemeSecondary
+    skinparam EntityBorderColor $ColorThemeSecondary
+    skinparam DatabaseBorderColor $ColorThemeSecondary
+    skinparam ParticipantBorderColor $ColorThemeSecondary
+    skinparam BoundaryBorderColor $ColorThemeSecondary
+    skinparam ControlBorderColor $ColorThemeSecondary
+    skinparam CollectionsBorderColor $ColorThemeSecondary
+    skinparam QueueBorderColor $ColorThemeSecondary
+
+    skinparam SequenceActorBackgroundColor $ColorBackgroundPrimary
+    skinparam EntityBackgroundColor $ColorBackgroundPrimary
+    skinparam DatabaseBackgroundColor $ColorBackgroundPrimary
+    skinparam ParticipantBackgroundColor $ColorBackgroundPrimary
+    skinparam BoundaryBackgroundColor $ColorBackgroundPrimary
+    skinparam ControlBackgroundColor $ColorBackgroundPrimary
+    skinparam CollectionsBackgroundColor $ColorBackgroundPrimary
+    skinparam QueueBackgroundColor $ColorBackgroundPrimary
+
+/' ACTIVITY STYLE '/
+
+    <style>
+        activityDiagram {
+            FontSize $FontSize
+            FontColor $ColorForegroundPrimary
+            FontStyle normal
+        }
+    </style>
+
+    skinparam defaultTextAlignment center
+    skinparam FooterTextAlignment right
+
+    skinparam ActivityBackgroundColor $ColorBackgroundPrimary
+    skinparam ActivityBorderColor $ColorBackgroundSecondary
+    skinparam ActivityFontColor $ColorForegroundPrimary
+
+/' CLASS STYLE '/
+
+    skinparam class {
+        BorderColor $ColorBackgroundSecondary
+        BackgroundColor $ColorBackgroundTertiary
+        ArrowColor $ColorForegroundPrimary
+        FontStyle bold
+    }
+
+/' WORK BREAKDOWN STYLE '/
+
+    <style>
+        wbsDiagram {
+            :depth(0) * {
+                BackgroundColor $ColorBackgroundTertiary
+                LineColor $ColorBackgroundSecondary
+            }
+        }
+    </style>

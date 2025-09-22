@@ -1,0 +1,12 @@
+/' THEME '/
+
+    !$ColorForegroundPrimary = black
+    !$ColorForegroundSecondary = darkgray
+    !$ColorForegroundTertiary = red
+
+    !$ColorBackgroundPrimary = f7f7f7
+    !$ColorBackgroundSecondary = gainsboro
+    !$ColorBackgroundTertiary = white
+
+    !$ColorThemePrimary = seagreen
+    !$ColorThemeSecondary = darkseagreen
