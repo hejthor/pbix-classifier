@@ -3,9 +3,7 @@ import os as _os
 import json as _json
 
 from model import OllamaClassifier
-from pbix_guid import pbix_guid
-from pbix_port import pbix_port
-from pbix_table import pbix_table
+from retrieve_table import retrieve_table
 from select_column import select_column
 
 def app(parameters_path):
@@ -17,19 +15,16 @@ def app(parameters_path):
     classification = parameters['sources']['classification']
     data = parameters['sources']['data']
 
-    port = pbix_port()
-    guid = pbix_guid(port)
-
-    classification_path = pbix_table(
-        output, port, guid, classification['table']
+    classification_path = retrieve_table(
+        output, classification['report'], classification['table']
     )
 
     classification_column = select_column(
         classification_path, classification['column']
     )
 
-    data_path = pbix_table(
-        output, port, guid, data['table']
+    data_path = retrieve_table(
+        output, data['report'], data['table']
     )
 
     data_column = select_column(

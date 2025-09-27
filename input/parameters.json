@@ -3,10 +3,12 @@
     "model": "qwen2.5:1.5b",
     "sources": {
         "classification": {
+            "report": "pbix",
             "table": "classifications",
             "column": "Classification"
         },
         "data": {
+            "report": "pbix",
             "table": "data",
             "column": "Word"
         }

@@ -1,13 +1,10 @@
 import subprocess as _subprocess
 import os as _os
 
-def pbix_table(folder, port, guid, table):
-    
-    server = f"localhost:{port}"
-    database = guid
+def retrieve_table(folder, report, table):
 
     result = _subprocess.run(
-        f'dscmd export csv "{folder}" --server "{server}" --database "{database}" --tables "{table}" --filetype "UTF8CSV"',
+        f'dscmd export csv "{folder}" --server "{report}.pbix" --tables "{table}" --filetype "UTF8CSV"',
         shell=True,
         capture_output=True,
         text=True
